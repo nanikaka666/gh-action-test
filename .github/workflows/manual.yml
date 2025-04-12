@@ -1,0 +1,14 @@
+name: Manual invoke workflow
+on:
+    workflow_dispatch:
+        inputs:
+            greeting:
+                type: string
+                default: Hello
+                required: true
+                description: input something message
+jobs:
+    run:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ inputs.greeting }}"
