@@ -1,0 +1,14 @@
+name: Print Github Contexts
+on: push
+jobs:
+    prints:
+        runs-on: ubuntu-latest
+        steps:
+            - name: show github
+              run: |
+                  echo "actor ${{github.actor}}"
+                  echo "run_id ${{github.run_id}}"
+                  echo "wordspace ${{github.workspace}}"
+                  echo "head_ref ${{github.head_ref}}"
+                  echo "action ${{github.action}}"
+                  echo "run_attempt ${{github.run_attempt}}"
